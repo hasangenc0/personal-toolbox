@@ -1,5 +1,6 @@
+const TODO_LIST_TABLE_NAME = "TodoTable";
 final createTodoTable = """
-CREATE TABLE TodoTable (
+CREATE TABLE $TODO_LIST_TABLE_NAME (
   id INTEGER PRIMARY KEY,
   title TEXT,
   description TEXT,
