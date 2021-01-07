@@ -5,5 +5,7 @@
   "tr": "Türkçe",
   "tools": "Araçlar",
   "home": "Ana Sayfa",
-  "add": "Ekle"
+  "add": "Ekle",
+  "todoItemPlaceholder": "Yapılacaklara ekleyin...",
+  "todoItemRemoved": "Yapılacaklardan silindi"
 }

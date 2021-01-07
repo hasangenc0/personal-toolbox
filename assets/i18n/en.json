@@ -5,5 +5,7 @@
   "tr": "Turkish",
   "tools": "Tools",
   "home": "Home",
-  "add": "Add"
+  "add": "Add",
+  "todoItemPlaceholder": "Add a task...",
+  "todoItemRemoved": "Task removed"
 }
