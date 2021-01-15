@@ -6,7 +6,7 @@ import 'package:personal_toolbox/views/screens/home.dart';
 void main() {
   runApp(EasyLocalization(
       supportedLocales: [Locale('en'), Locale('tr')],
-      path: 'assets/i18n', // <-- change patch to your
+      path: 'assets/i18n',
       fallbackLocale: Locale('en'),
       child: App()));
 }
