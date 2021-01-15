@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_toolbox/models/todoList.dart';
 import 'package:personal_toolbox/services/todoListService.dart';
-import 'package:personal_toolbox/views/widgets/languageSwitch.dart';
+import 'package:personal_toolbox/views/widgets/headLayout.dart';
 import 'package:personal_toolbox/views/widgets/todoItem.dart';
 
 class TodoList extends StatefulWidget {
@@ -20,6 +20,10 @@ class TodoListState extends State<TodoList> {
 
   void updateItem(TodoItemModel value) {
     widget.service.updateItem(value).then((value) => {this.getItems()});
+  }
+
+  void deleteItem(int id) {
+    widget.service.deleteItem(id).then((value) => {this.getItems()});
   }
 
   void getItems() async {
@@ -62,7 +66,7 @@ class TodoListState extends State<TodoList> {
           padding: EdgeInsets.all(20),
           child: Center(
             child: ListView(children: <Widget>[
-              LanguageSwitch(),
+              HeadLayout(),
               SizedBox(
                   height: MediaQuery.of(context).size.height * 0.60,
                   child: Column(children: <Widget>[
@@ -75,12 +79,13 @@ class TodoListState extends State<TodoList> {
                               itemCount: items.length,
                               itemBuilder: (context, i) {
                                 return TodoItem(
-                                    key: Key(items[i].id.toString()),
-                                    value: items[i].title,
-                                    addItemCallback: items[i].id != null
-                                        ? updateItem
-                                        : addItem,
-                                    id: items[i].id);
+                                  key: Key(items[i].id.toString()),
+                                  item: items[i],
+                                  addItemCallback: items[i].id != null
+                                      ? updateItem
+                                      : addItem,
+                                  removeItemCallback: deleteItem,
+                                );
                               },
                             )
                           : Text('empty'),

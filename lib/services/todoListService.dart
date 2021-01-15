@@ -21,9 +21,10 @@ class TodoListService extends BaseService {
     return result > 0;
   }
 
-  void delete() async {
+  Future<bool> deleteItem(int id) async {
     Database db = await this.db;
-    int result = await db.delete(table);
+    int result = await db.delete(table, where: 'id = $id');
+    return result > 0;
   }
 
   Future<List<TodoItemModel>> getItems() async {
