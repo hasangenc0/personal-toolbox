@@ -2,8 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_toolbox/views/screens/todoList.dart';
+import 'package:personal_toolbox/views/styles/toolBox.dart';
 import 'package:personal_toolbox/views/widgets/box.dart';
-import 'package:personal_toolbox/views/widgets/languageSwitch.dart';
+import 'package:personal_toolbox/views/widgets/headLayout.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -16,19 +17,19 @@ class Home extends StatelessWidget {
           padding: EdgeInsets.all(10),
           child: Center(
             child: ListView(children: <Widget>[
-              LanguageSwitch(),
+              HeadLayout(),
               Center(
                   child: RichText(
                       text: TextSpan(
                 text: tr('tools'),
                 style: new TextStyle(
                   fontSize: 18,
-                  color: Colors.white,
+                  color: getToolboxTitleColor(context),
                 ),
               ))),
               Box(
                   tr('todoList'),
-                  Colors.blue,
+                  getToolboxColor(context),
                   () => {
                         Navigator.pushAndRemoveUntil(
                             context,
