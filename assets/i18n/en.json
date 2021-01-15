@@ -7,5 +7,6 @@
   "home": "Home",
   "add": "Add",
   "todoItemPlaceholder": "Add a task...",
-  "todoItemRemoved": "Task removed"
+  "todoItemRemoved": "Task removed",
+  "toggleTheme": "Change Theme"
 }

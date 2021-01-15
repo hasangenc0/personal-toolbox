@@ -7,5 +7,6 @@
   "home": "Ana Sayfa",
   "add": "Ekle",
   "todoItemPlaceholder": "Yapılacaklara ekleyin...",
-  "todoItemRemoved": "Yapılacaklardan silindi"
+  "todoItemRemoved": "Yapılacaklardan silindi",
+  "toggleTheme": "Temayı Değiştir"
 }
