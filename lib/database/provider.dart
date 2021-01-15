@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:personal_toolbox/database/sql/phoneBook.dart';
 import 'package:personal_toolbox/database/sql/todoTable.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart';
@@ -18,7 +17,7 @@ class DBProvider {
   }
 
   createDB(Database db, int version) async {
-    await db.execute("$createTodoTable$createPhoneBookTable");
+    await db.execute("$createTodoTable");
   }
 
   openDB() async {
